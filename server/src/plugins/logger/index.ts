@@ -37,7 +37,7 @@ export default (): IPlugin => {
         info: () => {
             return {
                 name: 'Good Logger',
-                version: '1.0.0'
+                version: '8.1.1'
             };
         }
     };
