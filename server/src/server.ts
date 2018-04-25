@@ -3,6 +3,8 @@ import * as Boom from 'boom';
 import { IPlugin } from './plugins/interfaces';
 import { IServerConfigurations } from './configurations';
 
+import * as Client from "./client"; 
+
 export async function init(
     configs: IServerConfigurations,
 ): Promise<Hapi.Server> {
@@ -41,8 +43,9 @@ export async function init(
         console.log('All plugins registered successfully.');
 
         console.log('Register Routes');
+        Client.init(server, configs);
         console.log('Routes registered sucessfully.');
-
+        
         return server;
     } catch (err) {
         console.log('Error starting server: ', err);
