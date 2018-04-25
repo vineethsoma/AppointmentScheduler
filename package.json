@@ -10,7 +10,8 @@
   "scripts": {
     "start": "nodemon",
     "clean": "rm -rf ./build",
-    "build": "./node_modules/.bin/tsc -d -p ."
+    "build": "./node_modules/.bin/tsc -d -p .",
+    "test": "./node_modules/.bin/gulp test"
   },
   "repository": {
     "type": "git",
@@ -27,9 +28,17 @@
   "homepage": "https://github.com/vineethsoma/AppointmentScheduler#readme",
   "devDependencies": {
     "@types/boom": "^7.2.0",
+    "@types/chai": "^4.1.3",
+    "@types/gulp": "^4.0.5",
     "@types/hapi": "^17.0.11",
     "@types/inert": "^5.1.0",
+    "@types/mocha": "^5.2.0",
     "@types/nconf": "0.0.37",
+    "chai": "^4.1.2",
+    "gulp": "^3.9.1",
+    "gulp-env": "^0.4.0",
+    "gulp-mocha": "^5.0.0",
+    "mocha": "^5.1.1",
     "nodemon": "^1.17.3",
     "ts-node": "^6.0.0",
     "tslint": "^5.9.1",
