@@ -1,0 +1,46 @@
+{
+  "name": "appointmentscheduler",
+  "version": "1.0.0",
+  "description": "App to schedule appointments. ",
+  "main": "index.js",
+  "engines": {
+    "node": "^8.9.4",
+    "npm": "^5.6.0"
+  },
+  "scripts": {
+    "start": "nodemon",
+    "clean": "rm -rf ./build",
+    "build": "./node_modules/.bin/tsc -d -p ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vineethsoma/AppointmentScheduler.git"
+  },
+  "keywords": [
+    "scheduler"
+  ],
+  "author": "vineeth soma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vineethsoma/AppointmentScheduler/issues"
+  },
+  "homepage": "https://github.com/vineethsoma/AppointmentScheduler#readme",
+  "devDependencies": {
+    "@types/boom": "^7.2.0",
+    "@types/hapi": "^17.0.11",
+    "@types/nconf": "0.0.37",
+    "nodemon": "^1.17.3",
+    "ts-node": "^6.0.0",
+    "tslint": "^5.9.1",
+    "typescript": "^2.8.3"
+  },
+  "dependencies": {
+    "boom": "^7.2.0",
+    "good": "^8.1.1",
+    "good-console": "^7.1.0",
+    "good-squeeze": "^5.0.2",
+    "hapi": "^17.3.1",
+    "nconf": "^0.10.0",
+    "path": "^0.12.7"
+  }
+}

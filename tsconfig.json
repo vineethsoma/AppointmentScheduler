@@ -1,0 +1,19 @@
+{
+  "compilerOptions": {
+    "esModuleInterop": true,
+    "outDir": "build",
+    "target": "es6",
+    "module": "commonjs",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "allowUnreachableCode": false,
+    "removeComments": true,
+    // "pretty": true,
+    "typeRoots": ["node_modules/@types"],
+  },
+  "include": [
+      "server/src/**/**.ts",
+      "server/test/**/**.ts"
+    ],
+
+}
