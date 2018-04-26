@@ -8,9 +8,20 @@
     "npm": "^5.6.0"
   },
   "scripts": {
-    "start": "nodemon",
-    "clean": "rm -rf ./build",
-    "build": "./node_modules/.bin/tsc -d -p ."
+    "ng": "ng",
+    "test": "ng test",
+    "lint": "ng lint",
+    "e2e": "ng e2e",
+    
+    "start": "node dist/index.js",
+    "dev-serve": "nodemon",
+    "clean": "rm -rf ./dist",
+
+    "build": "npm run build-server && npm run build-client && npm run copy-config",
+    "build-server": "./node_modules/.bin/tsc -d -p .",
+    "build-client": "ng build --prod",
+
+    "copy-config" : "cp -R server/src/configurations/*.json dist/configurations"
   },
   "repository": {
     "type": "git",
@@ -26,23 +37,50 @@
   },
   "homepage": "https://github.com/vineethsoma/AppointmentScheduler#readme",
   "devDependencies": {
+    "@angular/cli": "^1.7.4",
+    "@angular/compiler-cli": "^5.2.0",
+    "@angular/language-service": "^5.2.0",
     "@types/boom": "^7.2.0",
     "@types/hapi": "^17.0.11",
     "@types/inert": "^5.1.0",
+    "@types/jasmine": "~2.8.3",
+    "@types/jasminewd2": "~2.0.2",
     "@types/nconf": "0.0.37",
+    "@types/node": "^9.6.6",
+    "codelyzer": "^4.0.1",
+    "jasmine-core": "~2.8.0",
+    "jasmine-spec-reporter": "~4.2.1",
+    "karma": "~2.0.0",
+    "karma-chrome-launcher": "~2.2.0",
+    "karma-coverage-istanbul-reporter": "^1.2.1",
+    "karma-jasmine": "~1.1.0",
+    "karma-jasmine-html-reporter": "^0.2.2",
     "nodemon": "^1.17.3",
-    "ts-node": "^6.0.0",
-    "tslint": "^5.9.1",
-    "typescript": "^2.8.3"
+    "protractor": "~5.1.2",
+    "ts-node": "~4.1.0",
+    "tslint": "~5.9.1",
+    "typescript": "~2.5.3"
   },
   "dependencies": {
+    "@angular/animations": "^5.2.0",
+    "@angular/common": "^5.2.0",
+    "@angular/compiler": "^5.2.0",
+    "@angular/core": "^5.2.0",
+    "@angular/forms": "^5.2.0",
+    "@angular/http": "^5.2.0",
+    "@angular/platform-browser": "^5.2.0",
+    "@angular/platform-browser-dynamic": "^5.2.0",
+    "@angular/router": "^5.2.0",
     "boom": "^7.2.0",
+    "core-js": "^2.4.1",
+    "rxjs": "^5.5.6",
     "good": "^8.1.1",
     "good-console": "^7.1.0",
     "good-squeeze": "^5.0.2",
     "hapi": "^17.3.1",
     "inert": "^5.1.0",
     "nconf": "^0.10.0",
-    "path": "^0.12.7"
+    "path": "^0.12.7",
+    "zone.js": "^0.8.19"
   }
 }

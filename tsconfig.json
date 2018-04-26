@@ -1,7 +1,6 @@
 {
   "compilerOptions": {
-    "esModuleInterop": true,
-    "outDir": "build",
+    "outDir": "dist",
     "target": "es6",
     "module": "commonjs",
     "moduleResolution": "node",
@@ -9,11 +8,19 @@
     "allowUnreachableCode": false,
     "removeComments": true,
     // "pretty": true,
-    "typeRoots": ["node_modules/@types"],
+    "typeRoots": [
+      "node_modules/@types"
+    ],
+    "types": [
+      "node"
+    ]
   },
   "include": [
       "server/src/**/**.ts",
       "server/test/**/**.ts"
     ],
+    "exclude": [
+      "./node_modules/*"
+    ]
 
 }
