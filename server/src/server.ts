@@ -3,7 +3,7 @@ import * as Boom from 'boom';
 import { IPlugin } from './plugins/interfaces';
 import { IServerConfigurations } from './configurations';
 
-import * as Client from "./client"; 
+import * as Client from './client';
 
 export async function init(
     configs: IServerConfigurations,
@@ -27,10 +27,10 @@ export async function init(
             serverConfigs: configs
         };
 
-        let pluginPromises: Promise<any>[] = [];
+        const pluginPromises: Promise<any>[] = [];
 
         plugins.forEach((pluginName: string) => {
-            var plugin: IPlugin = require('./plugins/' + pluginName).default();
+            const plugin: IPlugin = require('./plugins/' + pluginName).default();
             console.log(
                 `Register Plugin ${plugin.info().name} v${plugin.info().version}`
             );
@@ -45,7 +45,7 @@ export async function init(
         console.log('Register Routes');
         Client.init(server, configs);
         console.log('Routes registered sucessfully.');
-        
+
         return server;
     } catch (err) {
         console.log('Error starting server: ', err);
